@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sustainability Through the Ages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Garamond, serif;
+    }
+
+    body {
+      background: #f4f6f5;
+      color: #2f3e34;
+    }
+
+    /* HERO */
+    .hero {
+      background: #6b8a7a;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px auto;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .timeline-item {
+      display: flex;
+      background: white;
+      border-radius: 12px;
+      margin: 20px 0;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .timeline-item:hover {
+      transform: scale(1.02);
+    }
+
+    .timeline-text {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .timeline-text h2 {
+      color: #6b8a7a;
+      margin-bottom: 10px;
+    }
+
+    .timeline-text p {
+      font-size: 0.95rem;
+    }
+
+    .timeline-image {
+      flex: 1;
+    }
+
+    .timeline-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #dde2df;
+      margin-top: 40px;
+    }
+
+    /* ✅ RESPONSIVE (mobile) */
+    @media (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column;
+      }
+
+      .timeline-image img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Sustainability Through the Ages</h1>
+  <p>Exploring Intel’s journey toward a more sustainable future</p>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+
+  <div class="timeline-item">
+    <div class="timeline-text">
+      <h2>2000 – Early Sustainability Efforts</h2>
+      <p>Intel begins focusing on reducing emissions and increasing energy efficiency in manufacturing.</p>
+    </div>
+    <div class="timeline-image">
+      <img src="https://images.unsplash.com/photo-1581091215367-59ab6a57c6c9" alt="Technology lab">
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-text">
+      <h2>2010 – Renewable Energy Growth</h2>
+      <p>Intel invests heavily in renewable energy and becomes one of the largest corporate users of green power.</p>
+    </div>
+    <div class="timeline-image">
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="Solar panels">
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-text">
+      <h2>2020 – Carbon Reduction Goals</h2>
+      <p>Intel commits to aggressive carbon neutrality goals and water conservation initiatives.</p>
+    </div>
+    <div class="timeline-image">
+      <img src="https://images.unsplash.com/photo-1483721310020-03333e577078" alt="Nature environment">
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-text">
+      <h2>2025 – Sustainable Innovation</h2>
+      <p>Continued innovation in eco-friendly chip manufacturing and global sustainability leadership.</p>
+    </div>
+    <div class="timeline-image">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Computer technology">
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Mahee Shah | Sustainability Timeline Project</p>
+  <p>Scroll to explore • Hover over cards for interaction</p>
+</footer>
+
+</body>
+</html>
