@@ -11,66 +11,129 @@
   <style>
     body {
       font-family: Garamond, serif;
-      background: #f4f6f5;
+      background: #f5f7f6;
       color: #2f3e34;
     }
 
+    /* HERO */
     .hero {
-      background: #0071c5;
+      background: linear-gradient(135deg, #0071c5, #00a3e0);
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
 
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      opacity: 0.9;
+    }
+
+    /* TIMELINE */
     .timeline {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 40px auto;
-      width: 90%;
-      max-width: 900px;
+      position: relative;
+      max-width: 1000px;
+      margin: 60px auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background: #6b8a7a;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
     }
 
     .timeline-item {
-      display: flex;
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-content {
       background: white;
+      padding: 20px;
       border-radius: 12px;
-      margin: 20px 0;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
-    .timeline-item:hover {
-      transform: scale(1.02);
+    .timeline-content:hover {
+      transform: translateY(-5px);
     }
 
-    .timeline-text {
-      padding: 20px;
-      flex: 1;
-    }
-
-    .timeline-image img {
+    .timeline img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 10px;
     }
 
+    /* DOTS */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background: #6b8a7a;
+      border-radius: 50%;
+      top: 25px;
+      z-index: 1;
+    }
+
+    .timeline-item.right::before {
+      left: -10px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        margin-bottom: 30px;
+      }
+
+      .timeline-item.left,
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-item::before {
+        left: 10px;
+      }
+    }
+
+    /* FORM */
+    .form-section {
+      background: #eef1ee;
+      padding: 60px 20px;
+      border-radius: 15px;
+    }
+
+    /* FOOTER */
     footer {
       background: #d1d5d8;
-      padding: 20px;
       text-align: center;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 768px) {
-      .timeline-item {
-        flex-direction: column;
-      }
-
-      .timeline-image img {
-        height: 200px;
-      }
+      padding: 25px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -80,86 +143,81 @@
 <!-- HERO -->
 <section class="hero">
   <h1>Sustainability Through the Ages</h1>
-  <p>Exploring Intel’s journey toward a more sustainable future</p>
+  <p>Intel’s journey toward a more sustainable future</p>
 </section>
 
 <!-- TIMELINE -->
 <section class="timeline">
 
-  <div class="timeline-item">
-    <div class="timeline-text">
-      <h2>2000</h2>
-      <p>Intel begins early sustainability initiatives focusing on efficiency.</p>
-    </div>
-    <div class="timeline-image">
-      <img src="https://images.unsplash.com/photo-1581091215367-59ab6a57c6c9" alt="Technology manufacturing">
+  <div class="timeline-item left">
+    <div class="timeline-content">
+      <h3>2000</h3>
+      <p>Intel begins improving manufacturing efficiency and reducing waste.</p>
+      <img src="https://images.unsplash.com/photo-1581091215367-59ab6a57c6c9" alt="Technology lab">
     </div>
   </div>
 
-  <div class="timeline-item">
-    <div class="timeline-text">
-      <h2>2010</h2>
-      <p>Intel becomes one of the largest users of renewable energy.</p>
-    </div>
-    <div class="timeline-image">
-      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="Solar energy panels">
+  <div class="timeline-item right">
+    <div class="timeline-content">
+      <h3>2010</h3>
+      <p>Intel becomes a leader in renewable energy usage.</p>
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="Wind turbines">
     </div>
   </div>
 
-  <div class="timeline-item">
-    <div class="timeline-text">
-      <h2>2020</h2>
-      <p>Commitment to carbon reduction and sustainability goals.</p>
+  <div class="timeline-item left">
+    <div class="timeline-content">
+      <h3>2020</h3>
+      <p>Major goals set for carbon reduction and sustainability.</p>
+      <img src="https://images.unsplash.com/photo-1483721310020-03333e577078" alt="Earth environment">
     </div>
-    <div class="timeline-image">
-      <img src="https://images.unsplash.com/photo-1483721310020-03333e577078" alt="Wind energy turbines">
+  </div>
+
+  <div class="timeline-item right">
+    <div class="timeline-content">
+      <h3>2025</h3>
+      <p>Continued innovation in sustainable semiconductor design.</p>
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Computer chip">
     </div>
   </div>
 
 </section>
 
-<!-- SUBSCRIPTION FORM -->
+<!-- SUBSCRIPTION -->
 <section class="container my-5">
-  <h2 class="text-center">Subscribe to Intel’s Sustainability Newsletter</h2>
+  <div class="form-section">
+    <h2 class="text-center mb-4">Subscribe to Sustainability Updates</h2>
 
-  <form>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email address</label>
-      <input 
-        type="email"
-        id="email"
-        class="form-control"
-        placeholder="Enter your email"
-        required
-      >
-    </div>
+    <form>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" id="email" class="form-control" required placeholder="Enter your email">
+      </div>
 
-    <button type="submit" class="btn btn-primary w-100">
-      Subscribe
-    </button>
-  </form>
+      <button type="submit" class="btn btn-primary w-100">
+        Subscribe
+      </button>
+    </form>
+  </div>
 </section>
 
-<!-- ACCORDION (INTERACTIVITY) -->
+<!-- ACCORDION -->
 <section class="container my-5">
-  <h2 class="text-center">Learn More</h2>
+  <h2 class="text-center mb-4">Learn More</h2>
 
   <div class="accordion" id="faq">
-
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">
           Why sustainability matters?
         </button>
       </h2>
-
       <div id="q1" class="accordion-collapse collapse show">
         <div class="accordion-body">
-          Sustainability helps reduce environmental impact and supports long-term innovation.
+          Sustainability reduces environmental impact and improves long-term innovation.
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -173,23 +231,21 @@
   </p>
 </footer>
 
-<!-- RTL AUTO SCRIPT -->
+<!-- RTL AUTO -->
 <script>
   const html = document.documentElement;
 
   function checkRTL() {
-    const lang = html.lang;
-    if (lang === "ar" || lang === "he") {
-      html.setAttribute("dir", "rtl");
+    if (html.lang === "ar" || html.lang === "he") {
+      html.dir = "rtl";
     } else {
-      html.setAttribute("dir", "ltr");
+      html.dir = "ltr";
     }
   }
 
   setInterval(checkRTL, 2000);
 </script>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
